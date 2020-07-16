@@ -47,6 +47,7 @@ html {
 
 body {
   background: var(--color-two);
+  color: var(--color-one);
 }
 
 body > * {
@@ -63,13 +64,28 @@ button {
 
 header {
   align-items: center;
-  color: var(--color-one);
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   margin: 0 auto;
   max-width: 512px;
+  min-height: 580px;
+  position: relative;
+}
+
+header .logo-dt {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+header .logo-dt img {
+  height: 32px;
+}
+
+header .logo {
+  margin-bottom: 8px;
 }
 
 header h1 {
