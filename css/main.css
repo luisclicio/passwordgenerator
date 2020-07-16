@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+:root {
+  --color-one: #dee4e8;
+  --color-two: #08090a;
+  --color-two-alfa: #08090ae6;
+  --color-three: #4f7fa2;
+  --color-four: #46b09c;
+  --color-five: #ba0c3d;
+  --gradient: linear-gradient(45deg, #4f7fa2, #46b09c);
+  --gradient-alfa: linear-gradient(45deg, #4f7fa2a6, #46b09ca6);
+  --blur: blur(4px);
+  --polygon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-two);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient);
+}
+
+::selection {
+  background: var(--color-one);
+  color: var(--color-two);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-two);
+}
+
+body > * {
+  padding: 0 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  align-items: center;
+  color: var(--color-one);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 512px;
+}
+
+header h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+header h2 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.area-to-generate {
+  width: 100%;
+}
+
+.area-psw,
+.area-range {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.area-psw .input-result {
+  background: var(--color-one);
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 1.5em;
+  height: 40px;
+  padding: 8px;
+  width: 100%;
+}
+
+.area-psw .input-result::selection {
+  background: var(--color-two);
+  color: var(--color-one);
+}
+
+.area-psw .btn-copy {
+  background: var(--gradient);
+  border: none;
+  border-radius: 0 8px 8px 0;
+  height: 40px;
+  padding: 8px;
+  transition: transform 300ms;
+  user-select: none;
+  width: 40px;
+}
+
+.area-psw .btn-copy:active {
+  transform: scale(1.05);
+}
+
+.area-psw .btn-copy svg {
+  height: 24px;
+  width: 24px;
+}
+
+.area-psw .btn-copy svg path {
+  fill: var(--color-one);
+}
+
+.area-range .range-size {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--color-one);
+  border-radius: 8px;
+  height: 8px;
+  margin-right: 8px;
+  width: 100%;
+}
+
+.area-range .range-size::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--gradient);
+  border-radius: 8px;
+  cursor: pointer;
+  height: 24px;
+  transition: transform 300ms;
+  width: 24px;
+}
+
+.area-range .range-size:active::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+.area-range .range-size::-moz-range-thumb {
+  appearance: none;
+  background: var(--gradient);
+  border-radius: 8px;
+  cursor: pointer;
+  height: 24px;
+  transition: transform 300ms;
+  width: 24px;
+}
+
+.area-range .range-size:active::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+.area-range .size-value {
+  background: var(--gradient);
+  border-radius: 8px;
+  font-size: 1.5em;
+  font-weight: 500;
+  height: 40px;
+  padding: 6px;
+  text-align: center;
+  user-select: none;
+  max-width: 40px;
+  width: 40px;
+}
+
+.btn-generate {
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-one);
+  font-size: 1.5em;
+  font-weight: 500;
+  height: 40px;
+  transition: transform 300ms;
+  user-select: none;
+  width: 100%;
+}
+
+.btn-generate:active {
+  transform: scale(0.95);
+}
+
+.copy-alert {
+  align-items: center;
+  background: var(--gradient);
+  border-radius: 8px;
+  bottom: -50vh;
+  color: var(--color-one);
+  content: "Copied!";
+  display: flex;
+  font-size: 1.5em;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+  right: 50%;
+  position: fixed;
+  transform: translateX(50%);
+  transition: all 300ms;
+  width: 300px;
+  z-index: -1;
+}
+
+.copy-alert.visible {
+  bottom: 16px;
+  z-index: 1;
+}
